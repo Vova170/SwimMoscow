@@ -3,129 +3,347 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#061321">
-<title>SWIMOSCOW — Клуб спортивного плавания</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071522">
+<title>SWIMOSCOW — Ultimate</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#061321;--blue:#00c8ff;--light:#8de5ff;--muted:#a7bdce}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 100%,#07547a 0%,transparent 55%),linear-gradient(145deg,#102c46,#061321 75%)}
-.hero:before,.hero:after{content:"";position:absolute;width:150%;height:180px;left:-25%;bottom:-100px;border-radius:50%;border:2px solid #00c8ff22;box-shadow:0 0 50px #00c8ff22;animation:water 8s ease-in-out infinite alternate}
-.hero:after{bottom:-125px;animation-delay:-4s}
-@keyframes water{from{transform:translateX(-3%) rotate(-3deg)}to{transform:translateX(3%) rotate(3deg)}}
-.hero-content{position:relative;z-index:2}
-.logo{font-size:clamp(40px,9vw,82px);font-weight:900;letter-spacing:8px;text-shadow:0 0 35px #00c8ff77}
+:root{
+ --bg:#071522;--panel:#102437;--panel2:#142d43;
+ --blue:#20c9f5;--gold:#f5c65b;--muted:#8da7ba;
+ --white:#f4faff;--green:#42d69a;--red:#ff667b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);
+ font-family:Arial,sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{padding:25px 18px 30px;
+ background:radial-gradient(ellipse at 50% 120%,#12618a 0%,#102e48 40%,#071522 78%);
+ border-bottom:1px solid #20435b}
+.top{max-width:1100px;margin:auto;display:flex;
+ justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:22px;font-weight:900;letter-spacing:2px}
 .logo span{color:var(--blue)}
-.tagline{color:var(--light);letter-spacing:5px;font-size:12px;margin-top:20px}
-.hero-description{max-width:550px;margin:30px auto 0;line-height:1.8;color:#c1d9e8}
-.primary-button{display:inline-block;margin-top:35px;padding:16px 32px;border-radius:40px;background:linear-gradient(100deg,#00a9e8,#00e0ff);color:#041421;font-weight:800;box-shadow:0 0 30px #00c8ff44;transition:.3s}
-.primary-button:hover{transform:translateY(-5px);box-shadow:0 0 40px #00c8ff88}
-nav{position:sticky;top:0;z-index:10;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:15px 10px;background:#061321ee;backdrop-filter:blur(15px);border-bottom:1px solid #163b53}
-nav a{color:#b6d9eb;padding:11px 15px;border-radius:30px;font-size:13px;transition:.3s}
-nav a:hover{background:#00c8ff22;color:white}
-main{max-width:1150px;margin:auto;padding:35px 20px}
-section{margin:30px 0;padding:32px;border:1px solid #1b4059;border-radius:24px;background:linear-gradient(145deg,#102b42,#091a2b);box-shadow:0 15px 50px #0003}
-.section-label{color:var(--blue);font-size:11px;letter-spacing:4px;margin-bottom:12px}
-h2{font-size:clamp(23px,5vw,32px);margin-bottom:20px;color:white}
-p{color:var(--muted);line-height:1.8}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:17px;margin-top:25px}
-.card{padding:25px;border-radius:19px;border:1px solid #24516b;background:linear-gradient(145deg,#173b56,#0b2032);transition:.3s}
-.card:hover{transform:translateY(-7px);border-color:var(--blue);box-shadow:0 10px 35px #00bfff22}
-.card-icon{font-size:38px;margin-bottom:18px}
-.card h3{font-size:18px;margin-bottom:10px}
-.card p{font-size:14px}
-.highlight{text-align:center;background:radial-gradient(circle at center,#075078,transparent 75%),#0b2032}
-.highlight h2{color:var(--light)}
-footer{text-align:center;padding:45px 20px;border-top:1px solid #18374c;color:#66869d;font-size:12px;line-height:2}
-footer strong{color:var(--light)}
-@media(max-width:600px){
-.hero{min-height:78vh}
-.logo{letter-spacing:4px}
-.tagline{letter-spacing:3px}
-nav{gap:3px}
-nav a{padding:9px 10px;font-size:12px}
-main{padding:15px 12px}
-section{padding:23px 18px;border-radius:19px}
-.cards{grid-template-columns:1fr}
+.tag{color:var(--muted);font-size:11px;letter-spacing:3px;margin-top:5px}
+.hero{max-width:1100px;margin:35px auto 0}
+.hero small{color:var(--blue);letter-spacing:3px}
+h1{font-size:clamp(32px,7vw,58px);margin:12px 0}
+.hero p{color:#b3c8d7;line-height:1.6;max-width:540px}
+.container{max-width:1100px;margin:auto;padding:22px 16px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:linear-gradient(145deg,var(--panel2),var(--panel));
+ border:1px solid #24435a;border-radius:17px;padding:18px}
+.stat b{display:block;font-size:30px;color:var(--blue);margin-top:9px}
+.stat span,.muted{font-size:12px;color:var(--muted)}
+nav{display:flex;gap:8px;overflow-x:auto;padding:18px 0}
+nav button,.btn{border:1px solid #31516a;background:#11283b;
+ color:white;padding:12px 16px;border-radius:11px;white-space:nowrap}
+nav button.active,.btn.primary{background:var(--blue);color:#041622;
+ border-color:var(--blue);font-weight:bold}
+.btn.gold{background:var(--gold);color:#17202a;border:0}
+.btn.danger{background:#512638;border-color:#8d4055}
+.btn:active{transform:scale(.97)}
+h2{font-size:23px;margin:8px 0 18px}
+h3{margin:0 0 12px}
+.section{display:none}
+.section.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+input,select{width:100%;padding:13px;border-radius:10px;
+ background:#081b2b;border:1px solid #34516a;color:white;
+ margin:6px 0 12px;outline:none}
+input:focus,select:focus{border-color:var(--blue)}
+label{font-size:12px;color:#a9c2d3}
+.form{max-width:520px}
+.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.row>*{flex:1}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:13px 9px;border-bottom:1px solid #294257}
+th{color:var(--blue)}
+.tablewrap{overflow-x:auto}
+.pill{display:inline-block;padding:5px 9px;border-radius:20px;
+ background:#123c48;color:#65e6bd;font-size:11px}
+.goldtext{color:var(--gold)}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+footer{text-align:center;color:#58758b;padding:35px 15px;font-size:12px}
+.notice{background:#19374a;border:1px solid #315b72;
+ padding:13px;border-radius:12px;color:#c2d9e8;font-size:13px;
+ line-height:1.5;margin:14px 0}
+@media(max-width:650px){
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .grid{grid-template-columns:1fr}
+ .hero{margin-top:25px}
+ .stat b{font-size:25px}
 }
 </style>
 </head>
 <body>
-
-<header class="hero">
-<div class="hero-content">
-<div class="logo">SWIM<span>OSCOW</span></div>
-<div class="tagline">СИЛА • СКОРОСТЬ • ХАРАКТЕР</div>
-<p class="hero-description">Территория спортивного плавания, дисциплины и больших побед. Здесь начинается путь к новым достижениям.</p>
-<a href="#about" class="primary-button">ОТКРЫТЬ КЛУБ ↓</a>
-</div>
+<header>
+ <div class="top">
+  <div>
+   <div class="logo">SWIM<span>OSCOW</span></div>
+   <div class="tag">SWIMMING CLUB · EST. 2026</div>
+  </div>
+  <button class="btn" onclick="showSection('login')">♙ Тренер</button>
+ </div>
+ <div class="hero">
+  <small>БОЛЬШЕ ЧЕМ ПЛАВАНИЕ</small>
+  <h1>Сила. Скорость.<br><span style="color:var(--blue)">Результат.</span></h1>
+  <p>Цифровая платформа клуба SWIMOSCOW. Спортсмены, достижения, соревнования и история тренировок.</p>
+ </div>
 </header>
 
-<nav>
-<a href="#about">О клубе</a>
-<a href="#groups">Группы</a>
-<a href="#schedule">Расписание</a>
-<a href="#rating">Рейтинг</a>
-<a href="#awards">Награды</a>
-<a href="#contacts">Контакты</a>
-</nav>
+<main class="container">
+ <div class="stats">
+  <div class="card stat"><span>СПОРТСМЕНЫ</span><b id="total">0</b></div>
+  <div class="card stat"><span>РЕЗУЛЬТАТЫ</span><b id="resultsCount">0</b></div>
+  <div class="card stat"><span>ТРЕНИРОВКИ</span><b id="trainingCount">0</b></div>
+  <div class="card stat"><span>ОТМЕТКИ</span><b id="attendanceCount">0</b></div>
+ </div>
 
-<main>
-<section id="about">
-<div class="section-label">ABOUT SWIMOSCOW</div>
-<h2>Добро пожаловать в SWIMOSCOW</h2>
-<p>Мы объединяем спортсменов, тренеров и родителей. Наша команда развивается, ставит новые цели, преодолевает трудности и добивается результатов. Каждый спортсмен — часть большой команды.</p>
-</section>
+ <nav>
+  <button class="active" data-tab="home" onclick="showSection('home')">Главная</button>
+  <button data-tab="athletes" onclick="showSection('athletes')">Спортсмены</button>
+  <button data-tab="rating" onclick="showSection('rating')">Рейтинг</button>
+  <button data-tab="attendance" onclick="showSection('attendance')">Посещаемость</button>
+  <button data-tab="results" onclick="showSection('results')">Результаты</button>
+  <button data-tab="login" onclick="showSection('login')">Кабинет тренера</button>
+ </nav>
 
-<section id="groups">
-<div class="section-label">OUR DIRECTIONS</div>
-<h2>Направления клуба</h2>
-<div class="cards">
-<div class="card"><div class="card-icon">🏊</div><h3>Спортивное плавание</h3><p>Подготовка спортсменов, техника плавания и соревнования.</p></div>
-<div class="card"><div class="card-icon">💧</div><h3>Обучение плаванию</h3><p>Освоение воды, развитие навыков и уверенности.</p></div>
-<div class="card"><div class="card-icon">👶</div><h3>Плавание для малышей</h3><p>Знакомство с водой и занятия для самых маленьких.</p></div>
-</div>
-</section>
+ <section id="home" class="section active">
+  <h2>Добро пожаловать в SWIMOSCOW</h2>
+  <div class="grid">
+   <div class="card">
+    <h3>🏆 Общий рейтинг</h3>
+    <p class="muted">Лучшие спортсмены клуба по набранным очкам.</p>
+    <button class="btn primary" onclick="showSection('rating')">Открыть рейтинг →</button>
+   </div>
+   <div class="card">
+    <h3>🏊 Наши спортсмены</h3>
+    <p class="muted">Состав клуба и спортивные достижения.</p>
+    <button class="btn primary" onclick="showSection('athletes')">Смотреть →</button>
+   </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+   <h3>⭐ Топ спортсменов</h3>
+   <div id="topAthletes" class="empty">Пока нет результатов. Добавьте спортсменов через кабинет тренера.</div>
+  </div>
+ </section>
 
-<section id="schedule">
-<div class="section-label">TRAINING</div>
-<h2>📅 Расписание тренировок</h2>
-<p>Здесь будет размещено расписание тренировок всех групп клуба.</p>
-</section>
+ <section id="athletes" class="section">
+  <h2>Спортсмены клуба</h2>
+  <input id="athleteSearch" placeholder="Поиск спортсмена..." oninput="renderAthletes()">
+  <div class="card tablewrap">
+   <table><thead><tr><th>Имя</th><th>Группа</th><th>Очки</th></tr></thead>
+   <tbody id="athleteRows"></tbody></table>
+   <div id="athleteEmpty" class="empty">Спортсменов пока нет</div>
+  </div>
+ </section>
 
-<section id="rating" class="highlight">
-<div class="section-label">LEADERBOARD</div>
-<h2>🏆 Общий рейтинг спортсменов</h2>
-<p>Единая таблица достижений спортсменов SWIMOSCOW. Результаты, очки и позиции в рейтинге.</p>
-</section>
+ <section id="rating" class="section">
+  <h2>🏆 Общий рейтинг</h2>
+  <div class="notice">Очки начисляются за результаты, добавленные тренером. Чем выше результат по очкам, тем выше позиция.</div>
+  <div class="card tablewrap">
+   <table><thead><tr><th>Место</th><th>Спортсмен</th><th>Группа</th><th>Очки</th></tr></thead>
+   <tbody id="ratingRows"></tbody></table>
+   <div id="ratingEmpty" class="empty">Рейтинг появится после добавления результатов.</div>
+  </div>
+ </section>
 
-<section id="awards">
-<div class="section-label">HALL OF FAME</div>
-<h2>⭐ Доска почёта</h2>
-<div class="cards">
-<div class="card"><div class="card-icon">🥇</div><h3>Победы</h3><p>История лучших выступлений наших спортсменов.</p></div>
-<div class="card"><div class="card-icon">⚡</div><h3>Рекорды</h3><p>Личные рекорды и спортивный прогресс.</p></div>
-<div class="card"><div class="card-icon">🏅</div><h3>Награды</h3><p>Достижения, которыми гордится наш клуб.</p></div>
-</div>
-</section>
+ <section id="attendance" class="section">
+  <h2>Посещаемость</h2>
+  <div class="card tablewrap">
+   <table><thead><tr><th>Дата</th><th>Спортсмен</th><th>Статус</th></tr></thead>
+   <tbody id="attendanceRows"></tbody></table>
+   <div id="attendanceEmpty" class="empty">Отметок пока нет.</div>
+  </div>
+ </section>
 
-<section id="contacts">
-<div class="section-label">CONTACTS</div>
-<h2>Связаться с нами</h2>
-<p><strong>SWIMOSCOW</strong></p>
-<p>Клуб спортивного плавания</p>
-<p>Краснознаменск</p>
-</section>
+ <section id="results" class="section">
+  <h2>Результаты соревнований</h2>
+  <div class="card tablewrap">
+   <table><thead><tr><th>Спортсмен</th><th>Дистанция</th><th>Время</th><th>Очки</th></tr></thead>
+   <tbody id="resultRows"></tbody></table>
+   <div id="resultEmpty" class="empty">Результатов пока нет.</div>
+  </div>
+ </section>
+
+ <section id="login" class="section">
+  <h2>Кабинет тренера</h2>
+  <div id="loginBox" class="card form">
+   <h3>🔐 Авторизация</h3>
+   <div class="notice">При первом запуске создай пароль тренера. Поддерживаются русские и английские буквы.</div>
+   <div id="setupInfo" class="muted"></div>
+   <label>Пароль</label>
+   <input id="password" type="password" placeholder="Введите пароль" autocomplete="current-password">
+   <button class="btn primary" onclick="login()">Войти</button>
+   <p id="loginError" style="color:var(--red);font-size:13px"></p>
+  </div>
+
+  <div id="adminBox" style="display:none">
+   <div class="row">
+    <h3>Панель управления</h3>
+    <button class="btn danger" onclick="logout()">Выйти</button>
+   </div>
+   <div class="grid">
+    <div class="card">
+     <h3>➕ Новый спортсмен</h3>
+     <label>ФИО</label><input id="newName" placeholder="Имя и фамилия">
+     <label>Группа</label><input id="newGroup" placeholder="Например, Группа 1">
+     <button class="btn primary" onclick="addAthlete()">Добавить</button>
+    </div>
+    <div class="card">
+     <h3>📋 Посещаемость</h3>
+     <label>Спортсмен</label><select id="attAthlete"></select>
+     <label>Статус</label>
+     <select id="attStatus">
+      <option>Присутствовал</option><option>Отсутствовал</option><option>Уважительная причина</option>
+     </select>
+     <button class="btn primary" onclick="addAttendance()">Сохранить отметку</button>
+    </div>
+    <div class="card">
+     <h3>⏱ Результат спортсмена</h3>
+     <label>Спортсмен</label><select id="resAthlete"></select>
+     <label>Дистанция</label><input id="distance" placeholder="Например, 100 м вольный стиль">
+     <label>Время</label><input id="time" placeholder="Например, 01:05.20">
+     <label>Очки</label><input id="points" type="number" min="0" placeholder="Количество очков">
+     <button class="btn primary" onclick="addResult()">Добавить результат</button>
+    </div>
+    <div class="card">
+     <h3>🛠 Управление</h3>
+     <p class="muted">Можно удалить спортсмена и его связанные записи.</p>
+     <label>Спортсмен</label><select id="deleteAthlete"></select>
+     <button class="btn danger" onclick="deleteAthlete()">Удалить спортсмена</button>
+    </div>
+   </div>
+   <div class="notice">Важно: эта версия хранит данные в браузере устройства. Для общей базы всех тренеров необходимо отдельно подключить Supabase и настроить права доступа.</div>
+  </div>
+ </section>
 </main>
+<footer>SWIMOSCOW · SWIMMING CLUB · 2026</footer>
 
-<footer>
-<strong>SWIMOSCOW</strong><br>
-СИЛА • СКОРОСТЬ • ХАРАКТЕР<br>
-© 2026 Все права защищены
-</footer>
+<script>
+const KEY='swimoscow_ultimate_v1';
+const PASS='swimoscow_trainer_password_v1';
+let data={athletes:[],attendance:[],results:[]};
+let logged=false;
 
+function load(){
+ try{
+  const saved=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(saved)data=saved;
+ }catch(e){console.error(e)}
+}
+function save(){
+ localStorage.setItem(KEY,JSON.stringify(data));
+ render();
+}
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function showSection(id){
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));
+ if(id==='login')updateLogin();
+}
+function updateLogin(){
+ const exists=!!localStorage.getItem(PASS);
+ document.getElementById('setupInfo').textContent=exists?
+ 'Введите пароль тренера.':'Первый вход: придумайте новый пароль и нажмите «Войти».';
+ document.getElementById('password').placeholder=exists?'Пароль тренера':'Создайте пароль тренера';
+ document.getElementById('loginBox').style.display=logged?'none':'block';
+ document.getElementById('adminBox').style.display=logged?'block':'none';
+}
+function login(){
+ const p=document.getElementById('password').value;
+ const old=localStorage.getItem(PASS);
+ if(!p){document.getElementById('loginError').textContent='Введите пароль';return}
+ if(!old){
+  if(p.length<6){document.getElementById('loginError').textContent='Пароль должен содержать минимум 6 символов';return}
+  localStorage.setItem(PASS,p);
+ }else if(p!==old){
+  document.getElementById('loginError').textContent='Неверный пароль';return;
+ }
+ logged=true;
+ document.getElementById('password').value='';
+ document.getElementById('loginError').textContent='';
+ updateLogin();render();
+}
+function logout(){logged=false;updateLogin()}
+function guard(){
+ if(!logged){alert('Сначала войдите в кабинет тренера');showSection('login');return false}
+ return true;
+}
+function addAthlete(){
+ if(!guard())return;
+ const name=document.getElementById('newName').value.trim();
+ const group=document.getElementById('newGroup').value.trim();
+ if(!name){alert('Введите имя спортсмена');return}
+ data.athletes.push({id:crypto.randomUUID(),name,group,created:new Date().toISOString()});
+ document.getElementById('newName').value='';
+ document.getElementById('newGroup').value='';
+ save();alert('Спортсмен добавлен');
+}
+function addAttendance(){
+ if(!guard())return;
+ const id=document.getElementById('attAthlete').value;
+ if(!id){alert('Сначала добавьте спортсмена');return}
+ data.attendance.unshift({id,date:new Date().toLocaleDateString('ru-RU'),status:document.getElementById('attStatus').value});
+ save();alert('Посещаемость сохранена');
+}
+function addResult(){
+ if(!guard())return;
+ const id=document.getElementById('resAthlete').value;
+ const distance=document.getElementById('distance').value.trim();
+ const time=document.getElementById('time').value.trim();
+ const points=Number(document.getElementById('points').value);
+ if(!id||!distance||!time||!Number.isFinite(points)||points<0){alert('Заполните все поля корректно');return}
+ data.results.unshift({id,distance,time,points,date:new Date().toLocaleDateString('ru-RU')});
+ document.getElementById('distance').value='';
+ document.getElementById('time').value='';
+ document.getElementById('points').value='';
+ save();alert('Результат добавлен');
+}
+function deleteAthlete(){
+ if(!guard())return;
+ const id=document.getElementById('deleteAthlete').value;
+ if(!id)return;
+ const a=data.athletes.find(x=>x.id===id);
+ if(!a||!confirm('Удалить '+a.name+' и все связанные записи?'))return;
+ data.athletes=data.athletes.filter(x=>x.id!==id);
+ data.attendance=data.attendance.filter(x=>x.id!==id);
+ data.results=data.results.filter(x=>x.id!==id);
+ save();alert('Записи удалены');
+}
+function athleteName(id){return data.athletes.find(x=>x.id===id)?.name||'Удалённый спортсмен'}
+function score(id){return data.results.filter(x=>x.id===id).reduce((s,x)=>s+x.points,0)}
+function renderAthletes(){
+ const q=(document.getElementById('athleteSearch')?.value||'').toLowerCase();
+ const arr=data.athletes.filter(a=>(a.name+' '+a.group).toLowerCase().includes(q));
+ document.getElementById('athleteRows').innerHTML=arr.map(a=>`<tr><td>${escapeHTML(a.name)}</td><td>${escapeHTML(a.group||'—')}</td><td>${score(a.id)}</td></tr>`).join('');
+ document.getElementById('athleteEmpty').style.display=arr.length?'none':'block';
+}
+function render(){
+ document.getElementById('total').textContent=data.athletes.length;
+ document.getElementById('resultsCount').textContent=data.results.length;
+ document.getElementById('trainingCount').textContent=new Set(data.attendance.map(x=>x.date)).size;
+ document.getElementById('attendanceCount').textContent=data.attendance.length;
+ renderAthletes();
+ const ranked=[...data.athletes].sort((a,b)=>score(b.id)-score(a.id));
+ document.getElementById('ratingRows').innerHTML=ranked.map((a,i)=>`<tr><td>${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td><td>${escapeHTML(a.name)}</td><td>${escapeHTML(a.group||'—')}</td><td class="goldtext">${score(a.id)}</td></tr>`).join('');
+ document.getElementById('ratingEmpty').style.display=ranked.length?'none':'block';
+ document.getElementById('topAthletes').innerHTML=ranked.length?ranked.slice(0,3).map((a,i)=>`<p>${['🥇','🥈','🥉'][i]} ${escapeHTML(a.name)} <b style="float:right">${score(a.id)} очков</b></p>`).join(''):'Пока нет результатов.';
+ document.getElementById('attendanceRows').innerHTML=data.attendance.map(x=>`<tr><td>${escapeHTML(x.date)}</td><td>${escapeHTML(athleteName(x.id))}</td><td><span class="pill">${escapeHTML(x.status)}</span></td></tr>`).join('');
+ document.getElementById('attendanceEmpty').style.display=data.attendance.length?'none':'block';
+ document.getElementById('resultRows').innerHTML=data.results.map(x=>`<tr><td>${escapeHTML(athleteName(x.id))}</td><td>${escapeHTML(x.distance)}</td><td>${escapeHTML(x.time)}</td><td>${x.points}</td></tr>`).join('');
+ document.getElementById('resultEmpty').style.display=data.results.length?'none':'block';
+ ['attAthlete','resAthlete','deleteAthlete'].forEach(id=>{
+  const el=document.getElementById(id),old=el.value;
+  el.innerHTML='<option value="">Выберите спортсмена</option>'+data.athletes.map(a=>`<option value="${a.id}">${escapeHTML(a.name)}</option>`).join('');
+  if(data.athletes.some(a=>a.id===old))el.value=old;
+ });
+}
+load();render();updateLogin();
+</script>
 </body>
 </html>
